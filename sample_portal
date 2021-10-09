@@ -1,0 +1,36 @@
+ using UnityEngine;
+ using System.Collections;
+ 
+ public class Portals : MonoBehaviour {
+ 
+     public GameObject Portal1;
+     public GameObject Portal2;
+ 
+     void Awake(){
+ 
+     }
+ 
+     // Use this for initialization
+     void Start () {
+     
+     }
+     
+     // Update is called once per frame
+     void Update () {
+  
+     }
+ 
+     void OnCollisionEnter (Collision col){
+     
+         if (col.gameObject == Portal1) {
+             GameObject.Find("FPSController").transform.position = Portal2.transform.position;
+         }
+ 
+         if (col.gameObject == Portal2)
+         {
+             GameObject.Find("FPSController").transform.position = Portal1.transform.position;
+         }
+     }
+ 
+ 
+ }
